@@ -1,0 +1,12 @@
+<p>Children length: {{children.length}}</p>
+<p>Changeset child: {{changeset.child.name}}</p>
+<p>Model child: {{parent.child.name}}</p>
+
+{{#bs-form model=changeset onSubmit=(action "submit") as |form|}}
+  {{#form.element controlType="power-select" label="Select child" options=children optionLabelPath="name" property="child" as |el|}}
+    {{el.control searchField="name"}}
+  {{/form.element}}
+  <div class="pull-right">
+    {{#bs-button type="success" buttonType="submit"}}Save{{/bs-button}}
+  </div>
+{{/bs-form}}
