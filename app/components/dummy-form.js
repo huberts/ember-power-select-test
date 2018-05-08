@@ -1,6 +1,5 @@
 import Component from '@ember/component';
 import Changeset from 'ember-changeset';
-import lookupValidator from 'ember-changeset-validations';
 
 export default Component.extend({
 
@@ -8,7 +7,7 @@ export default Component.extend({
 
   init() {
     this._super(...arguments);
-    this.set("changeset", new Changeset(this.get("parent"), lookupValidator(this.get("validations"), this.get("validations"))));
+    this.set("changeset", new Changeset(this.get("parent")));
   },
 
   actions: {
